@@ -1,6 +1,7 @@
 import 'package:feed_management/feed_management.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(const MyApp());
