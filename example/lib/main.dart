@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: false,
           appBarTheme: const AppBarTheme(
+            centerTitle: false,
             backgroundColor: Colors.white,
             foregroundColor: Colors.black,
             elevation: 0,
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           SavedFeedsScreen.id: (context) => SavedFeedsScreen(),
+          NotificationScreen.id: (context) => NotificationScreen(),
         },
         // initialRoute: ,
         home: const HomeScreen(),

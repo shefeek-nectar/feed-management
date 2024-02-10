@@ -1,5 +1,9 @@
+import 'package:feed_management/feed_management.dart';
 import 'package:feed_management/screens/saved_feeds/saved_feeds_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../functions/comments_bottom_sheet.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,6 +16,20 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Home"),
         actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(
+                NotificationScreen.id,
+              );
+            },
+            icon: Icon(CupertinoIcons.bell),
+          ),
+          IconButton(
+            onPressed: () {
+              showCommentsBottomSheet(context);
+            },
+            icon: Icon(CupertinoIcons.bubble_right),
+          ),
           IconButton(
             onPressed: () {
               Navigator.of(context).pushNamed(
