@@ -1,5 +1,5 @@
 import 'package:feed_management/feed_management.dart';
-
+import 'package:sizer/sizer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,18 +12,25 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: false,
+    return Sizer(
+      builder: (context, orientation, deviceType) => MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: false,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.black,
+            elevation: 0,
+          ),
+        ),
+        debugShowCheckedModeBanner: false,
+        routes: {
+          SavedFeedsScreen.id: (context) => SavedFeedsScreen(),
+        },
+        // initialRoute: ,
+        home: const HomeScreen(),
       ),
-      debugShowCheckedModeBanner: false,
-      routes: {
-        SavedFeedsScreen.id: (context) => const SavedFeedsScreen(),
-      },
-      // initialRoute: ,
-      home: const HomeScreen(),
     );
   }
 }
