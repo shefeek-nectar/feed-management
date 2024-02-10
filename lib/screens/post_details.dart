@@ -22,27 +22,40 @@ class PostDetailsScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const FeedCard(),
-          SizedBox(
-            height: 5.sp,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 6.sp),
-            child: Text(
-              "Comments",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp),
+          Expanded(
+            child: ListView(
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              shrinkWrap: true,
+              children: [
+                const FeedCard(),
+                SizedBox(
+                  height: 5.sp,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 6.sp),
+                  child: Text(
+                    "Comments",
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp),
+                  ),
+                ),
+                const CommentFields(
+                    userName: "Peter",
+                    comment: "Hello",
+                    commentTime: "2:30 PM"),
+                const Divider(),
+                const CommentFields(
+                    userName: "Peter",
+                    comment: "Hello",
+                    commentTime: "2:30 PM"),
+                const Divider(),
+                const CommentFields(
+                    userName: "Peter",
+                    comment: "Hello",
+                    commentTime: "2:30 PM"),
+              ],
             ),
-          ),
-          const CommentFields(
-              userName: "Peter", comment: "Hello", commentTime: "2:30 PM"),
-          const Divider(),
-          const CommentFields(
-              userName: "Peter", comment: "Hello", commentTime: "2:30 PM"),
-          const Spacer(
-            flex: 2,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 6.sp),
@@ -60,9 +73,9 @@ class PostDetailsScreen extends StatelessWidget {
               ],
             ),
           ),
-          const Spacer(
-            flex: 1,
-          ),
+          SizedBox(
+            height: 15.sp,
+          )
         ],
       ),
     );
