@@ -1,3 +1,4 @@
+import 'package:feed_management/screens/saved_feeds/saved_feeds_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,6 +9,16 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(
+                SavedFeedsScreen.id,
+              );
+            },
+            icon: Icon(Icons.bookmark_border),
+          )
+        ],
       ),
       body: ListView.builder(
         itemCount: 4,
@@ -20,13 +31,11 @@ class HomeScreen extends StatelessWidget {
                     CircleAvatar(
                       child: Icon(Icons.person),
                     ),
-                    
-                    Column(children: [
-                      
-                      Text("Name"),
-                      
-                      
-                    ],)
+                    Column(
+                      children: [
+                        Text("Name"),
+                      ],
+                    )
                   ],
                 )
               ],
